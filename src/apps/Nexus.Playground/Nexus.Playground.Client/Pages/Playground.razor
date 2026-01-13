@@ -1,6 +1,6 @@
 @page "/playground"
 
-@rendermode InteractiveAuto
+@rendermode InteractiveWebAssembly
 
 @using MudBlazor
 @using Microsoft.AspNetCore.Components
@@ -57,7 +57,7 @@
             TimeSpan transitionDuration = wasmRenderTime - _serverRenderTime;
 
             Console.WriteLine($"[WASM] OnInitialized at {wasmRenderTime:HH:mm:ss.fff}");
-            Console.WriteLine($"[TRANSITION] Server → WASM took {transitionDuration.TotalMilliseconds:F0}ms ({transitionDuration.TotalSeconds:F2}s)");
+            Console.WriteLine($"[TRANSITION] Server → WASM took ({transitionDuration.TotalSeconds:F2}s)");
 
             _renderModeInfo = $"렌더 모드 전환: {transitionDuration.TotalSeconds:F2}초 소요";
         }
